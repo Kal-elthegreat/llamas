@@ -1,27 +1,11 @@
 import { VoterViewRow } from './VoterViewRow';
 import { VoterEditRow } from './VoterEditRow';
 
-import { useState } from 'react';
-
 
 
 export const VoterTable = props => {
 
-    const [selectedVotersList, updateSelectedVotersList] = useState([ ]);
-
-    const selectRows = voterId => {
-        if(selectedVotersList.includes(voterId)){
-            updateSelectedVotersList(
-                selectedVotersList.filter(selectedVoter => selectedVoter !== voterId)
-            );
-        }else{
-            updateSelectedVotersList([
-                ...selectedVotersList,
-                voterId
-            ]);
-        }
-    }
-
+console.log(props.voters)
 
 
     return (
@@ -42,7 +26,7 @@ export const VoterTable = props => {
             </thead>
             <tbody>
                 { props.voters.map(voter => voter.id !== props.editVoterID ?
-                     <VoterViewRow key={voter.id} voter={voter} deleteVoter={props.onDeleteVoter} editVoter={props.onEditVoterID} selectRowsToDelete={selectRows}/> : 
+                     <VoterViewRow key={voter.id} voter={voter} deleteVoter={props.onDeleteVoter} editVoter={props.onEditVoterID}/> : 
                      <VoterEditRow key={voter.id} voter={voter} cancel={props.onEditVoterID} save={props.onClickSave} />) }
             </tbody>
         </table>
