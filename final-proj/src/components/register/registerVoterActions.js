@@ -1,3 +1,6 @@
+import { createApi } from "../../shared/services/apiData"
+
+
 export const ADD_VOTER_REQUEST_ACTION = "ADD_VOTER_REQUEST";
 export const SAVE_VOTER_REQUEST_ACTION = "SAVE_VOTER_REQUEST";
 export const DELETE_VOTER_REQUEST_ACTION = "DELETE_VOTER_REQUEST";
@@ -22,7 +25,7 @@ export const createRefreshVotersRequestAction = () => ({
     type: REFRESH_VOTERS_REQUEST_ACTION
 })
 
-export const createRefreshVotersDoneAction = () => ({
+export const createRefreshVotersDoneAction = (voters) => ({
     type: REFRESH_VOTERS_DONE_ACTION,payload:{voters}
 })
 
@@ -44,9 +47,11 @@ export const createAddVoterDoneAction = () => ({
 
 export const addVoter = voter => {
     return async dispatch => {
-        dispatch(createAddVoterRequestAction(car));
+        dispatch(createAddVoterRequestAction(voter));
         await appendVoter(voter);
-        dispatch(createAddVoterDoneAction());
+        //TODO: When the add panel and table panel are seprated, this should be dispatched
+        //dispatch(createAddVoterDoneAction());
+        dispatch(refreshVoters());
     }
 }
 
