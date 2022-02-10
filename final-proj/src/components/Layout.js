@@ -1,11 +1,12 @@
-import { Outlet,Link } from "react-router-dom"
+import { Outlet, Link } from "react-router-dom"
+import { Header } from "./Header"
 import './Layout.css'
 
 export const Layout = () => {
     return (
         <div className="container">
             <header id="main-header">
-                <h1>Pajama Llamas Voting Party</h1>
+                <Header />
             </header>
 
             <nav id="main-nav">
@@ -21,7 +22,7 @@ export const Layout = () => {
                 <Outlet/>
             </main>
             <footer id="footer">
-                <small>&copy; "There is not enough time to do all the nothing we want to do", Llamas Pajamas </small>
+                <small>&copy;</small><small id="team"> Pajama Llamas</small>
             </footer>
         </div>
     )
