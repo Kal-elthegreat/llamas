@@ -4,11 +4,11 @@ import './index.css'
 export const ElectionsTable = (props) => {
     const { data } = props;
     return (
-        <table>
+        <table className='elections-table'>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Action</th>
+                    <td>Name</td>
+                    <td>Action</td>
                 </tr>
             </thead>
             <tbody>

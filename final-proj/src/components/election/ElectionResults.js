@@ -1,32 +1,37 @@
-
+import './index.css'
 
 export const ElectionResults = (props) => {
 
     const { shouldDisplay } = props;
     return (
-        <div>
+        <div >
             {shouldDisplay && (
-                <table>
+                <>
+                    <h1 className='results-header'>Results</h1>
+                    <table className="election-results">
                     <thead>
                         <tr>
-                            <td>Results</td>
+                            <td>Questions</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Total Votes</td>
                         </tr>
                     </thead>
                     <tbody>
                         {questionnaire.map(q => {
                             return (
                                 <tr key={q.id}>
-                                    <td>{q.question}</td>
+                                    <td className='result-question'>{q.question}</td>
                                     <td>{q.yesCount}</td>
                                     <td>{q.noCount}</td>
-                                    <td>{q.totalVotes}</td>
+                                    <td>{q.voterIds.length}</td>
                                 </tr>
                             )
                         })}
                     </tbody>
-                </table>
+                    </table>
+                </>
             )}
-            <h1>nothing to see</h1>
         </div>
     )
 }

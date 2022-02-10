@@ -4,7 +4,7 @@ import {ElectionResults} from './ElectionResults'
 export const CreateElection = () => {
     // grab necessary state from store here and pass to children
     return (
-        <div>
+        <div className='election-container'>
             {/* <Form /> */}
             <ElectionsTable data={data}/>
             <ElectionResults shouldDisplay={false}/>
