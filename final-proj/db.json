@@ -1,135 +1,159 @@
 {
-    "voters":[
+  "voters": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "address": "3445 North Boulevard",
+      "city": "San Francisco",
+      "birthDate": "02/02/1990",
+      "email": "johndoe@gmail.com",
+      "phone": "5127895301"
+    },
+    {
+      "id": 2,
+      "firstName": "Johnny",
+      "lastName": "Bravo",
+      "address": "3445 South Boulevard",
+      "city": "San Francisco",
+      "birthDate": "03/03/1991",
+      "email": "johnnybravo@gmail.com",
+      "phone": "5127895801"
+    },
+    {
+      "id": 3,
+      "firstName": "Mary",
+      "lastName": "Jane",
+      "address": "3435 east Boulevard",
+      "city": "San Francisco",
+      "birthDate": "03/04/1991",
+      "email": "maryjane@gmail.com",
+      "phone": "5127095801"
+    },
+    {
+      "firstName": "Yokesh",
+      "lastName": "Vishwanathan Suresh Kumar",
+      "address": "65 Rio Robles East",
+      "city": "San Jose",
+      "birthdate": "",
+      "email": "asdsa",
+      "phone": "1312313",
+      "birthday": "2022-02-17",
+      "id": 4
+    }
+  ],
+  "elections": [
+    {
+      "id": 1,
+      "name": "Fun",
+      "questionnaire": [
         {
-            "id" : 1,
-            "firstName": "John",
-            "lastName":"Doe",
-            "address":"3445 North Boulevard",
-            "city":"San Francisco",
-            "birthDate":"02/02/1990",
-            "email": "johndoe@gmail.com",
-            "phone":"5127895301"
+          "id": 1,
+          "question": "IceCreams for dessert?",
+          "yesCount": 1,
+          "noCount": 1,
+          "voterIds": [
+            1,
+            2
+          ]
         },
         {
-            "id" : 2,
-            "firstName": "Johnny",
-            "lastName":"Bravo",
-            "address":"3445 South Boulevard",
-            "city":"San Francisco",
-            "birthDate":"03/03/1991",
-            "email": "johnnybravo@gmail.com",
-            "phone":"5127895801"
+          "id": 2,
+          "question": "Should Mondays be holidays?",
+          "yesCount": 2,
+          "noCount": 0,
+          "voterIds": [
+            1,
+            2
+          ]
         },
         {
-            "id" : 3,
-            "firstName": "Mary",
-            "lastName":"Jane",
-            "address":"3435 east Boulevard",
-            "city":"San Francisco",
-            "birthDate":"03/04/1991",
-            "email": "maryjane@gmail.com",
-            "phone":"5127095801"
+          "id": 3,
+          "question": "Should Coffee be taxed?",
+          "yesCount": 1,
+          "noCount": 1,
+          "voterIds": [
+            1,
+            2
+          ]
         }
-    ],
-    "elections":[
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Policy",
+      "questionnaire": [
         {
-            "id":1,
-            "name": "Fun",
-            "questionnaire":[
-                {
-                    "id" : 1,
-                    "question" :"IceCreams for dessert?",
-                    "yesCount": 1,
-                    "noCount": 1,
-                    "voterIds": [1,2]      
-                },
-                {
-                    "id" : 2,
-                    "question" :"Should Mondays be holidays?",
-                    "yesCount": 2,
-                    "noCount": 0,
-                    "voterIds": [1,2]      
-                },
-                {
-                    "id" : 3,
-                    "question" :"Should Coffee be taxed?" ,
-                    "yesCount": 1,
-                    "noCount": 1,
-                    "voterIds": [1,2] 
-                }
-            ]
+          "id": 1,
+          "question": "Pets need to be considered as dependents for tax purposes?",
+          "yesCount": 1,
+          "noCount": 0,
+          "voterIds": [
+            3
+          ]
         },
         {
-            "id":2,
-            "name": "Policy",
-            "questionnaire":[
-                {
-                    "id": 1,
-                    "question": "Pets need to be considered as dependents for tax purposes?",
-                    "yesCount": 1,
-                    "noCount": 0,
-                    "voterIds": [3]
-                },
-                {
-                    "id": 2,
-                    "question": "Public transport should be free?",
-                    "yesCount": 1,
-                    "noCount": 0,
-                    "voterIds": [3]
-                }        
-            ]
+          "id": 2,
+          "question": "Public transport should be free?",
+          "yesCount": 1,
+          "noCount": 0,
+          "voterIds": [
+            3
+          ]
         }
-    ],
-    "votes":[
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "voterId": 1,
+      "electionId": 1,
+      "polls": [
         {
-            "voterId":1,
-            "electionId" : 1,
-            "polls":[
-                {
-                    "questionId":1,
-                    "hasVoted": false
-                },
-                {
-                    "questionId":2,
-                    "hasVoted": true
-                },
-                {
-                    "questionId":3,
-                    "hasVoted": true
-                }
-            ]
+          "questionId": 1,
+          "hasVoted": false
         },
         {
-            "voterId":2,
-            "electionId" : 1,
-            "polls":[
-                {
-                    "questionId":1,
-                    "hasVoted": true
-                },
-                {
-                    "questionId":2,
-                    "hasVoted": true
-                },
-                {
-                    "questionId":3,
-                    "hasVoted": false
-                }
-            ]
+          "questionId": 2,
+          "hasVoted": true
         },
         {
-            "voterId":3,
-            "electionId" : 2,
-            "polls":[
-                {
-                    "questionId":1,
-                    "hasVoted": true
-                },
-                {
-                    "questionId":2,
-                    "hasVoted": true
-                }
-            ]
+          "questionId": 3,
+          "hasVoted": true
         }
-    ]
+      ]
+    },
+    {
+      "voterId": 2,
+      "electionId": 1,
+      "polls": [
+        {
+          "questionId": 1,
+          "hasVoted": true
+        },
+        {
+          "questionId": 2,
+          "hasVoted": true
+        },
+        {
+          "questionId": 3,
+          "hasVoted": false
+        }
+      ]
+    },
+    {
+      "voterId": 3,
+      "electionId": 2,
+      "polls": [
+        {
+          "questionId": 1,
+          "hasVoted": true
+        },
+        {
+          "questionId": 2,
+          "hasVoted": true
+        }
+      ]
+    }
+  ]
 }
