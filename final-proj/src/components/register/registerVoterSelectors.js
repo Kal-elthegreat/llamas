@@ -1,3 +1,5 @@
+import { createSelector } from 'reselect';
+
 export const selectVoters= state => state.voters;
 export const selectSortObj = state => state.sortObj;
 export const selectEditVoterId = state => state.editVoterId;
