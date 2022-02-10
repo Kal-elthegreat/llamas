@@ -107,6 +107,7 @@ table {
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(to top,#01aeef,#eb8fbc);
+    font-size: 14px;
 }
 
 #team {
