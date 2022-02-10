@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import { VIEW_RESULTS_ACTION,SHOULD_DISPLAY_RESULTS_ACTION } from "../components/election/actions/electionActions";
 import { CANCEL_EDIT_VOTER_ACTION, EDIT_VOTER_REQUEST_ACTION, REFRESH_VOTERS_DONE_ACTION, SORT_VOTERS_ACTION } from "../components/register/registerVoterActions";
 
 const votersReducer = (voters=[],action)=>{
@@ -25,8 +26,25 @@ const sortObjReducer = (sortObj={order:true,column:'ID'},action)=>{
     return sortObj;
 }
 
+// Elections Reducers
+const viewResultsReducer = (election = [], action) => {
+    if (action.type === VIEW_RESULTS_ACTION) {
+        return election
+        //return state.find(el => el ===action.id) //should find the matching id from the array of elections
+    }
+    return election; 
+}
+const displayResultsReducer = (shouldDisplay = false, action) => {
+    if (action.type === SHOULD_DISPLAY_RESULTS_ACTION) {
+        return shouldDisplay = true //should determine if we display the list of questions for an election
+    }
+    return shouldDisplay; 
+}
+
 export const llamasReducer = combineReducers({
     voters: votersReducer,
     editVoterId: editVoterIdRedcuer,
-    sortObj: sortObjReducer
+    sortObj: sortObjReducer,
+    election: viewResultsReducer,
+    shouldDisplay: displayResultsReducer
 })

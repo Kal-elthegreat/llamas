@@ -4,17 +4,19 @@ import { useLlamasStore } from '../../shared/useLlamasStore'
 
 export const CreateElection = () => {
     // grab necessary state from store here and pass to children
-    const {viewRow,shouldDisplayResults,questionnaire} = useLlamasStore()
+    const { viewResults,shouldDisplayResults, election,shouldDisplay } = useLlamasStore();
+
     return (
         <div className='election-container'>
             {/* <Form /> */}
             <ElectionsTable
-                data={data}
-                viewRow={viewRow}
+                elections={data} /*elections should be an array of objects*/
+                viewResults={viewResults}
+                shouldDisplayResults={shouldDisplayResults}
             />
             <ElectionResults
-                shouldDisplayResults={shouldDisplayResults}
-                questionnaire={questionnaire}
+                shouldDisplay={shouldDisplay}
+                // questionnaire={questionnaire}
             />
         </div>
     )
