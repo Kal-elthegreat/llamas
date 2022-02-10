@@ -1,13 +1,21 @@
 import {ElectionsTable} from './ElectionsTable'
 import {ElectionResults} from './ElectionResults'
+import { useLlamasStore } from '../../shared/useLlamasStore'
 
 export const CreateElection = () => {
     // grab necessary state from store here and pass to children
+    const {viewRow,shouldDisplayResults,questionnaire} = useLlamasStore()
     return (
-        <div>
+        <div className='election-container'>
             {/* <Form /> */}
-            <ElectionsTable data={data}/>
-            <ElectionResults shouldDisplay={false}/>
+            <ElectionsTable
+                data={data}
+                viewRow={viewRow}
+            />
+            <ElectionResults
+                shouldDisplayResults={shouldDisplayResults}
+                questionnaire={questionnaire}
+            />
         </div>
     )
 }
