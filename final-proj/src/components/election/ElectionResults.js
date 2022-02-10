@@ -13,9 +13,16 @@ export const ElectionResults = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            {/* <td>{obj.question</td> */}
-                        </tr>
+                        {questionnaire.map(q => {
+                            return (
+                                <tr key={q.id}>
+                                    <td>{q.question}</td>
+                                    <td>{q.yesCount}</td>
+                                    <td>{q.noCount}</td>
+                                    <td>{q.totalVotes}</td>
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 </table>
             )}
@@ -23,3 +30,27 @@ export const ElectionResults = (props) => {
         </div>
     )
 }
+
+const questionnaire =  [
+            {
+                "id": 1,
+                "question": "Pets need to be considered as dependents for tax purposes?",
+                "yesCount": 0,
+                "noCount": 4,
+                "voterIds": [1,17,92,35]
+            },
+            {
+                "id": 2,
+                "question": "Public transport should be free?",
+                "yesCount": 4,
+                "noCount": 0,
+                "voterIds": [1,17,92,35]
+            },
+            {
+                "id": 3,
+                "question": "Pets need to be considered as dependents for tax purposes?",
+                "yesCount": 2,
+                "noCount": 2,
+                "voterIds": [1,17,92,35]
+            },
+        ]
