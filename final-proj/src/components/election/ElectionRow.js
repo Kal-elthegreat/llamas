@@ -1,5 +1,5 @@
 export const ElectionRow = (props) => {
-    const { election} = props;
+    const { election, viewRow} = props;
     return (
         <tr>
             <td>{election.name}</td>
