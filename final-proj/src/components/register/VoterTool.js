@@ -16,6 +16,7 @@ export const VoterTool = () =>{
                 onDeleteVoter={llamasStore.deleteVoter} 
                 onClickSave={llamasStore.saveVoter} 
                 sortObj={llamasStore.sortObj}
+                onSort={llamasStore.sortVoters}
                 // sortButtonText={llamasStore.votersSort.sortCol + "-" + voterToolStore.votersSort.sortDir} 
                 />
                 </>

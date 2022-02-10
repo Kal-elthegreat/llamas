@@ -55,8 +55,9 @@ export const addVoter = voter => {
     }
 }
 
-export const createEditVoterAction = editVoterId =>
-({type: EDIT_VOTER_REQUEST_ACTION, payload: editVoterId})
+export const createEditVoterAction = editVoterId =>({
+    type: EDIT_VOTER_REQUEST_ACTION, payload: {editVoterId}
+})
 
 export const createCancelEditVoterAction = ()=>({
     type: CANCEL_EDIT_VOTER_ACTION
