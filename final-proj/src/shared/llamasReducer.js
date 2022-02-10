@@ -8,9 +8,9 @@ const votersReducer = (voters=[],action)=>{
     return voters;
 }
 
-const editVoterIdRedcuer = (editVoterId=-1,action) => {
+const editVoterIdReducer = (editVoterId=-1,action) => {
     if(action.type === EDIT_VOTER_REQUEST_ACTION){
-        return action.payload.voterId;
+        return action.payload.editVoterId;
     }
 
     if([REFRESH_VOTERS_DONE_ACTION,CANCEL_EDIT_VOTER_ACTION].includes(action.type))
@@ -50,7 +50,7 @@ const displayResultsReducer = (shouldDisplay = false, action) => {
 
 export const llamasReducer = combineReducers({
     voters: votersReducer,
-    editVoterId: editVoterIdRedcuer,
+    editVoterId: editVoterIdReducer,
     sortObj: sortObjReducer,
     elections:electionsReducer,
     election: viewResultsReducer,
