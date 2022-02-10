@@ -2,7 +2,7 @@ import { ElectionRow } from './ElectionRow';
 import './index.css'
 
 export const ElectionsTable = (props) => {
-    const { data, viewRow } = props;
+    const { elections, viewResults,shouldDisplayResults } = props;
     return (
         <table className='elections-table'>
             <thead>
@@ -12,12 +12,13 @@ export const ElectionsTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {data.map(el => {
+                {elections.map(el => {
                     return (
                         <ElectionRow
                             key={el.id}
                             election={el}
-                            viewRow={viewRow}
+                            viewResults={viewResults}
+                            shouldDisplayResults={shouldDisplayResults}
                         />
                     )
                 })}
