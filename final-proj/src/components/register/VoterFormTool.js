@@ -1,9 +1,9 @@
-import { VoterFormContainer } from "./VoterFormContainer";
+import { VoterForm } from "./VoterForm";
 
 export const VoterFormTool = () =>{
 
     return(
-            <VoterFormContainer />
+        <VoterForm buttonText="Register Voter"></VoterForm>
 
     )
 };
