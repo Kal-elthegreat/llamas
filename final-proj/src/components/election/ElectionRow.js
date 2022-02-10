@@ -1,9 +1,10 @@
 
 
 export const ElectionRow = (props) => {
-    const { election,shouldDisplayResults} = props;
+    const { election,shouldDisplayResults,selectElectionId} = props;
 
     const submitViewResults = (id) => {
+        selectElectionId(id)
         shouldDisplayResults(true); 
     }
 

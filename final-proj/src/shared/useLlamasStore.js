@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
-import { createShouldDisplayResultsAction, createAddElectionRequestAction,refreshElections} from "../components/election/actions/electionActions";
+import { createShouldDisplayResultsAction, createAddElectionRequestAction,refreshElections, createSelectIdAction} from "../components/election/actions/electionActions";
 import { addVoter, refreshVoters,saveVoter,deleteVoter, createSortVotersAction, createEditVoterAction, createCancelEditVoterAction } from "../components/register/registerVoterActions";
 import { selectEditVoterId, selectSortedVoters, selectSortObj } from "../components/register/registerVoterSelectors";
 
@@ -14,11 +14,12 @@ export const useLlamasStore = ()=> {
 
     //elections
     const elections = useSelector(state=> state.elections);
-    const election = useSelector(state => state.election);
+    const electionId = useSelector(state=> state.electionId);
+    const election = selectOne(elections,electionId)
     const shouldDisplay = useSelector(state => state.shouldDisplay);
-
+    
     const dispatch = useDispatch();
-
+    
     const actions = useMemo(()=> bindActionCreators({
         //Voters
         refreshVoters,
@@ -32,6 +33,7 @@ export const useLlamasStore = ()=> {
         //Elections
         shouldDisplayResults:createShouldDisplayResultsAction,
         addElection: createAddElectionRequestAction,
+        selectElectionId: createSelectIdAction,
         refreshElections,
     },dispatch),[dispatch]);
 
@@ -43,4 +45,11 @@ export const useLlamasStore = ()=> {
     return {...actions, 
         voters, editVoterId, sortObj,
         election,shouldDisplay,elections};
+}
+
+//fn to return a single election
+const selectOne = (elections,id) => {
+    if (elections) {
+        return elections.find(el => el.id === id)   
+    }
 }

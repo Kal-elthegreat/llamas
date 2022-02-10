@@ -1,9 +1,9 @@
 import { createApi } from "../../../shared/services/apiData"
 
-export const VIEW_RESULTS_ACTION = "[Election] VIEW_RESULTS";
+export const SELECT_ID_ACTION = "[Election] SELECT_ID"; // needs an action
 export const SHOULD_DISPLAY_RESULTS_ACTION = "[Election] SHOULD_DISPLAY_RESULTS";
 
-
+export const createSelectIdAction = (id) => ({ type: SELECT_ID_ACTION, id });
 export const createShouldDisplayResultsAction = (bool) => ({ type: SHOULD_DISPLAY_RESULTS_ACTION, bool})
 
 export const ADD_ELECTION_REQUEST_ACTION = "[Election] ADD_ELECTION_REQUEST";
