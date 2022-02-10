@@ -20,7 +20,7 @@ export const VoterForm = (props) => {
 
 const submitVoterForm = () => {
 
-  // props.onSubmitVoterForm({ ...voterForm });
+  props.onSubmitVoterForm({ ...voterForm });
 
   resetVoterForm();
 }
@@ -45,8 +45,8 @@ const submitVoterForm = () => {
       </label>
       <label>
         County/City:
-        <input type="text" name="county_city"
-          value={voterForm.county_city} onChange={change} />
+        <input type="text" name="city"
+          value={voterForm.city} onChange={change} />
       </label>
       <label>
         Birthday:
