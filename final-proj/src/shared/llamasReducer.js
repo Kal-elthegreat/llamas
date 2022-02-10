@@ -21,7 +21,7 @@ const editVoterIdReducer = (editVoterId=-1,action) => {
 
 const sortObjReducer = (sortObj={order:true,column:'Id'},action)=>{
     if(action.type===SORT_VOTERS_ACTION){
-       return {...action.payload.value}
+       return {...action.payload.sortObj}
     }
     return sortObj;
 }
