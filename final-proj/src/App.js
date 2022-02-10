@@ -15,8 +15,10 @@ export const App = () => {
           <Provider store = {llamasStore}>
              <RegisterVoter/>
           </Provider>
-        }/> {/* Redux Provider wraps here */}
-        <Route path="election" element={<CreateElection/>}/> {/* Redux Provider wraps here */}
+        }/> 
+        <Route path="election" element={<Provider store={llamasStore}>
+          <CreateElection/>
+        </Provider>}/>
       </Route>
     </Routes>
 

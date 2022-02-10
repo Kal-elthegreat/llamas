@@ -2,10 +2,10 @@ import './index.css'
 
 export const ElectionResults = (props) => {
 
-    const { shouldDisplay } = props;
+    const { shouldDisplayResults } = props; // need a questionnaire array of objects
     return (
         <div >
-            {shouldDisplay && (
+            {shouldDisplayResults && (
                 <>
                     <h1 className='results-header'>Results</h1>
                     <table className="election-results">
