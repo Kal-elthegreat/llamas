@@ -1,9 +1,29 @@
-th {
+thead {
     background-color: #01aeef;
     border: 1px solid black;
 }
 
-td {
+td{
     text-align: center;
     border: 1px solid black;
+    padding: 5px;
+}
+
+.election-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+     
+}
+.results-header {
+    text-align: center;
+    font-size: 36px;
+    color:#754c28;
+    font-family: 'Festive',cursive;
+    padding-bottom: 10px;
+}
+
+.result-question {
+    text-align: start;
 }

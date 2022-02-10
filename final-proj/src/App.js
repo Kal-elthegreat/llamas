@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { Home } from "./components/Home";
-import { CreateElection } from "./components/election/CreateElection";
-import { RegisterVoter } from "./components/register/RegisterVoter";
+import { CreateElection } from "./components/election/createElection";
+import { RegisterVoter } from "./components/register/registerVoter";
 
 export const App = () => {
   return (
