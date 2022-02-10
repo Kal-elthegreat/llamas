@@ -17,7 +17,6 @@ const showSortDir = (colName) => {
 
 
 const sortBy = (e)=>{      
-    console.log('sortby',e.target.name, props.sortObj.column);
 
     if(props.sortObj.column === e.target.name)  
         props.onSort({column:e.target.name,order:!props.sortObj.order});
@@ -45,7 +44,7 @@ const sortBy = (e)=>{
             <tbody>
                 { props.voters.map(voter => voter.id !== props.editVoterID ?
                      <VoterViewRow key={voter.id} voter={voter} deleteVoter={props.onDeleteVoter} editVoter={props.onEditVoter}/> : 
-                     <VoterEditRow key={voter.id} voter={voter} cancel={props.onEditVoterID} save={props.onClickSave} />) }
+                     <VoterEditRow key={voter.id} voter={voter} cancel={props.onCancelEdit} save={props.onClickSave} />) }
             </tbody>
         </table>
         <input className="btn" type="button" value="Delete Selected Rows"  />  
