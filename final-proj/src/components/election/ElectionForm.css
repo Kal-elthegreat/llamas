@@ -1,0 +1,20 @@
+.formRow{
+    display: block;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.formControl{
+    float:right;
+    margin-right: 20rem;
+}
+
+.formAction{
+    display: inline-block;
+    
+}
+
+#add{
+    margin-top: 10px;
+    margin-left: 20px;
+}
