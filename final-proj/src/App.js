@@ -3,9 +3,8 @@ import { Provider } from "react-redux";
 import { Layout } from "./components/Layout";
 import { Home } from "./components/Home";
 import { CreateElection } from "./components/election/createElection";
-import { VoterFormTool } from "./components/register/VoterFormTool";
+import { VoterTool } from "./components/register/VoterTool";
 import { llamasStore } from "./shared/llamasStore";
-import { VoterTable } from "./components/register/VoterTable";
 
 export const App = () => {
   return (
@@ -14,8 +13,7 @@ export const App = () => {
         <Route index element={<Home />}/>
         <Route path="register" element={
           <Provider store = {llamasStore}>
-             <VoterFormTool/>
-             <VoterTable />
+             <VoterTool/>
           </Provider>
         }/> 
         <Route path="election" element={<Provider store={llamasStore}>
