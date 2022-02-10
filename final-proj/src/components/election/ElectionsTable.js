@@ -2,7 +2,7 @@ import { ElectionRow } from './ElectionRow';
 import './index.css'
 
 export const ElectionsTable = (props) => {
-    const { elections,shouldDisplayResults } = props;
+    const { elections,shouldDisplayResults,selectElectionId } = props;
     return (
         <table className='elections-table'>
             <thead>
@@ -18,6 +18,7 @@ export const ElectionsTable = (props) => {
                             key={el.id}
                             election={el}
                             shouldDisplayResults={shouldDisplayResults}
+                            selectElectionId={selectElectionId}
                         />
                     )
                 })}

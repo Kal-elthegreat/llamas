@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { VIEW_RESULTS_ACTION,SHOULD_DISPLAY_RESULTS_ACTION, REFRESH_ELECTIONS_DONE_ACTION } from "../components/election/actions/electionActions";
+import { SELECT_ID_ACTION,SHOULD_DISPLAY_RESULTS_ACTION, REFRESH_ELECTIONS_DONE_ACTION } from "../components/election/actions/electionActions";
 import { CANCEL_EDIT_VOTER_ACTION, EDIT_VOTER_REQUEST_ACTION, REFRESH_VOTERS_DONE_ACTION, SORT_VOTERS_ACTION } from "../components/register/registerVoterActions";
 
 const votersReducer = (voters=[],action)=>{
@@ -36,11 +36,11 @@ const electionsReducer = (elections=[],action)=>{
     return elections;
 }
 
-const viewResultsReducer = (elections = [], action) => {
-    if (action.type === VIEW_RESULTS_ACTION) {
-        return elections.find(el => el ===action.payload) //should find the matching id from the array of elections
+const electionIdReducer = (id = -1, action) => {
+    if (action.type === SELECT_ID_ACTION) {
+        return action.id //should find the matching id from the array of elections
     }
-    return elections; 
+    return id; 
 }
 
 const displayResultsReducer = (shouldDisplay = false, action) => {
@@ -55,6 +55,6 @@ export const llamasReducer = combineReducers({
     editVoterId: editVoterIdReducer,
     sortObj: sortObjReducer,
     elections:electionsReducer,
-    election: viewResultsReducer,
+    electionId: electionIdReducer,
     shouldDisplay: displayResultsReducer
 })
