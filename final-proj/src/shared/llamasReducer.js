@@ -26,21 +26,23 @@ const sortObjReducer = (sortObj={order:true,column:'Id'},action)=>{
     return sortObj;
 }
 
+
+// Elections Reducers //////////////////
+
 const electionsReducer = (elections=[],action)=>{
-    if(action.type === REFRESH_ELECTIONS_DONE_ACTION)
-        return action.payload.elections;
+    if (action.type === REFRESH_ELECTIONS_DONE_ACTION) {
+        return action.elections;
+    }
     return elections;
 }
 
-
-// Elections Reducers
-const viewResultsReducer = (election = [], action) => {
+const viewResultsReducer = (elections = [], action) => {
     if (action.type === VIEW_RESULTS_ACTION) {
-        return election
-        //return state.find(el => el ===action.id) //should find the matching id from the array of elections
+        return elections.find(el => el ===action.payload) //should find the matching id from the array of elections
     }
-    return election; 
+    return elections; 
 }
+
 const displayResultsReducer = (shouldDisplay = false, action) => {
     if (action.type === SHOULD_DISPLAY_RESULTS_ACTION) {
         return shouldDisplay = true //should determine if we display the list of questions for an election

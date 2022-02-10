@@ -1,11 +1,10 @@
 
 
 export const ElectionRow = (props) => {
-    const { election, viewResults,shouldDisplayResults} = props;
+    const { election,shouldDisplayResults} = props;
 
     const submitViewResults = (id) => {
-        shouldDisplayResults(true);
-        viewResults(id)
+        shouldDisplayResults(true); 
     }
 
     return (

@@ -30,9 +30,19 @@ import {
         fetchOptions(HTTP_METHOD_DELETE));
       return res.json();
     };
+
+    const allElections = async () => {
+      const res = await fetch(collectionUrl(resourceName));
+      return res.json();
+    }
+
+    const singleElection = async (electionId) => {
+      if (electionId > 0) {
+        const res = await fetch(elementUrl(resourceName, electionId))
+        return res.json
+      }
+    }
   
-    return {
-      all, append, replace, remove,
-    };
+    return {all, append, replace, remove, allElections, singleElection};
   
   };
