@@ -9,8 +9,8 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />}/>
-        <Route path="register" element={<CreateElection/>}/>
-        <Route path="election" element={<RegisterUser/>}/>
+        <Route path="register" element={<RegisterUser/>}/> {/* Redux Provider wraps here */}
+        <Route path="election" element={<CreateElection/>}/> {/* Redux Provider wraps here */}
       </Route>
     </Routes>
 
