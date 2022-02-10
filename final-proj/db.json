@@ -11,14 +11,13 @@
       "phone": "5127895301"
     },
     {
-      "id": 2,
       "firstName": "Johnny",
       "lastName": "Bravo",
       "address": "3445 South Boulevard",
-      "city": "San Francisco",
-      "birthDate": "03/03/1991",
+      "city": "San Franciscos",
       "email": "johnnybravo@gmail.com",
-      "phone": "5127895801"
+      "phone": "5127895801",
+      "id": 2
     },
     {
       "id": 3,
@@ -29,17 +28,6 @@
       "birthDate": "03/04/1991",
       "email": "maryjane@gmail.com",
       "phone": "5127095801"
-    },
-    {
-      "firstName": "Yokesh",
-      "lastName": "Vishwanathan Suresh Kumar",
-      "address": "65 Rio Robles East",
-      "city": "San Jose",
-      "birthdate": "",
-      "email": "asdsa",
-      "phone": "1312313",
-      "birthday": "2022-02-17",
-      "id": 4
     }
   ],
   "elections": [

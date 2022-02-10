@@ -8,7 +8,7 @@ import { selectEditVoterId, selectSortedVoters, selectSortObj } from "../compone
 
 export const useLlamasStore = ()=> {
     //voters
-    const voters = useSelector(state => state.voters);
+    const voters = useSelector(selectSortedVoters);
     const editVoterId = useSelector(selectEditVoterId);
     const sortObj = useSelector(selectSortObj);
 
