@@ -25,6 +25,26 @@ code {
   flex-direction: row;
   align-items: center;
 }
+
+.header > img {
+  height: 50px;
+  border-radius: 50%;
+  width:auto;
+  margin-top: 10px;
+}
+
+.header > img:last-child {
+  transform: scaleX(-1);
+}
+
+.header > img:last-child:hover{
+  transform: scaleX(1)
+}
+
+.header > img:hover{
+  transform: scaleX(-1)
+}
+
 .team-name {
   font-family: 'Festive', cursive;
   font-size: 36px;

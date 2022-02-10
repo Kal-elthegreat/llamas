@@ -22,7 +22,7 @@ export const Layout = () => {
                 <Outlet/>
             </main>
             <footer id="footer">
-                <small>&copy;</small><small id="team"> Pajama Llamas</small>
+                <small>&copy;2022</small><small id="team"> Pajama Llamas</small>
             </footer>
         </div>
     )
