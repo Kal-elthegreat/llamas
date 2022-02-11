@@ -17,8 +17,7 @@ const {
     all: allElections,
     append: appendElection,
     replace: replaceElection,
-    remove: removeElection,
-    singleElection
+    remove: removeElection,   
 } = createApi('elections');
 
 export const createRefreshElectionsRequestAction = () => ({
