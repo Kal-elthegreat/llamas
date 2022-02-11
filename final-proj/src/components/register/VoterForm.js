@@ -27,7 +27,7 @@ const submitVoterForm = () => {
 
 
   return (
-    <form>
+    <form className='voter-tool-form'>
       <label>
         First Name:
         <input type="text" name="firstName"

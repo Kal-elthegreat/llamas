@@ -1,16 +1,15 @@
 import { VoterForm } from "./VoterForm";
 import { VoterTable } from "./VoterTable";
 import { useLlamasStore } from '../../shared/useLlamasStore';
+import './index.css'
 
 
 export const VoterTool = () =>{
     const llamasStore = useLlamasStore();
     return(
-        <>
-        <VoterForm buttonText="Register Voter" onSubmitVoterForm={llamasStore.addVoter}></VoterForm>
-
- 
-        <VoterTable voters={llamasStore.voters} 
+        <div className="voter-tool-container">
+            <VoterForm buttonText="Register Voter" onSubmitVoterForm={llamasStore.addVoter}/>
+            {/* <VoterTable voters={llamasStore.voters} 
                 editVoterID={llamasStore.editVoterId}
                 onEditVoter={llamasStore.editVoter}
                 onDeleteVoter={llamasStore.deleteVoter} 
@@ -19,8 +18,8 @@ export const VoterTool = () =>{
                 onSort={llamasStore.sortVoters}
                 onCancelEdit={llamasStore.cancelEditVoter}
                 // sortButtonText={llamasStore.votersSort.sortCol + "-" + voterToolStore.votersSort.sortDir} 
-                />
-                </>
+            /> */}
+        </div>
 
     )
 };

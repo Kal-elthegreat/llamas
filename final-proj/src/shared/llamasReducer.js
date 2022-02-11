@@ -38,7 +38,7 @@ const electionsReducer = (elections=[],action)=>{
 
 const electionIdReducer = (id = -1, action) => {
     if (action.type === SELECT_ID_ACTION) {
-        return action.id //should find the matching id from the array of elections
+        return action.id 
     }
     return id; 
 }

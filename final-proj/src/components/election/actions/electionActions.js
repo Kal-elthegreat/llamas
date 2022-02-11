@@ -1,6 +1,6 @@
 import { createApi } from "../../../shared/services/apiData"
 
-export const SELECT_ID_ACTION = "[Election] SELECT_ID"; // needs an action
+export const SELECT_ID_ACTION = "[Election] SELECT_ID";
 export const SHOULD_DISPLAY_RESULTS_ACTION = "[Election] SHOULD_DISPLAY_RESULTS";
 
 export const createSelectIdAction = (id) => ({ type: SELECT_ID_ACTION, id });
@@ -46,6 +46,7 @@ export const createAddElectionDoneAction = () => ({
 })
 
 export const addElection = election => {
+
     return async dispatch => {
         dispatch(createAddElectionRequestAction(election));
         await appendElection(election);
