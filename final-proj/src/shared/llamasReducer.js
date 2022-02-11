@@ -72,7 +72,10 @@ const displayResultsReducer = (shouldDisplay = false, action) => {
 
 const electionFormReducer = (initialForm = { id: 1, name: "", questionnaire: [{ id: 1, question: "", yesCount: 0, noCount: 0, voterIds: [] }] }, action) => {
     if (action.type === UPDATE_ELECTION_ACTION) {
-        return {...action.election }
+        return {
+            ...action.election,
+            questionnaire: [...action.election.questionnaire, { id: action.election.questionnaire.length + 1, question: "", yesCount: 0, noCount: 0, voterIds: [] }]
+        }
     }
     return initialForm
 
