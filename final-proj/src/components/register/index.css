@@ -1,0 +1,16 @@
+.voter-tool-container{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.voter-tool-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+
+.voter-tool-form > label {
+    margin: 5px;
+}
