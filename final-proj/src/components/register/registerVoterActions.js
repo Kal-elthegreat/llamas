@@ -13,6 +13,10 @@ export const EDIT_VOTER_REQUEST_ACTION = "EDIT_VOTER";
 export const CANCEL_EDIT_VOTER_ACTION = "CANCEL_EDIT_VOTER";
 export const SORT_VOTERS_ACTION = "SORT_VOTERS";
 
+export const DELETE_MULTIPLE_VOTERS_REQUEST_ACTION = 'DELETE_MULTIPLE_VOTERS_REQUEST';
+export const DELETE_MULTIPLE_VOTERS_DONE_ACTION = 'DELETE_MULTIPLE_VOTERS_DONE';
+export const DELETE_MULTIPLE_VOTERS_ACTION = 'DELETE_MULTIPLE_VOTERS';
+
 
 const {
     all: allVoters,
@@ -84,9 +88,21 @@ export const deleteVoter = voterId => {
         dispatch(createDeleteVoterRequestAction(voterId));
         await removeVoter(voterId);
         dispatch(refreshVoters());
-    }
+    }        
 }
 
 export const createSortVotersAction = sortObj=>({
     type:SORT_VOTERS_ACTION, payload:{sortObj}
 })
+
+export const createDeleteMultipleVotersRequestAction = voterIds => ({ type: DELETE_MULTIPLE_VOTERS_REQUEST_ACTION, payload: {voterIds} });
+
+export const createDeleteMultipleVotersDoneAction = voterIds => ({ type: DELETE_MULTIPLE_VOTERS_DONE_ACTION, payload: {voterIds} });
+
+export const deleteMultipleVoters = voterIds => {
+    return async dispatch => {
+        dispatch(createDeleteMultipleVotersRequestAction(voterIds));
+        await voterIds.forEach(voterId => deleteVoter(voterId));
+        dispatch(refreshVoters());
+    };
+}
