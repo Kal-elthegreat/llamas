@@ -50,8 +50,8 @@ const submitVoterForm = () => {
       </label>
       <label>
         Birthday:
-        <input type="date" name="birthday"
-          value={voterForm.birthday} onChange={change} />
+        <input type="date" name="birthdate"
+          value={voterForm.birthdate} onChange={change} />
       </label>
       <label>
         Email:
