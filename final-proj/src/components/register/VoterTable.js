@@ -4,7 +4,18 @@ import { VoterEditRow } from './VoterEditRow';
 
 
 export const VoterTable = props => {
+    const selectedVotersList = []
+    const selectRows = voterId => {
+        if(selectedVotersList.includes(voterId)){
+                selectedVotersList.filter(selectedVoter => selectedVoter !== voterId)
+        }
+        
+    };
 
+    const deleteMultipleVoters = () => {
+        console.log(selectedVotersList);
+        props.onDeleteMultipleVoters(selectedVotersList);
+    };
 
 const showSortDir = (colName) => {
         
@@ -43,11 +54,11 @@ const sortBy = (e)=>{
                 </thead>
                 <tbody>
                     { props.voters.map(voter => voter.id !== props.editVoterID ?
-                        <VoterViewRow key={voter.id} voter={voter} deleteVoter={props.onDeleteVoter} editVoter={props.onEditVoter}/> : 
+                        <VoterViewRow key={voter.id} voter={voter} deleteVoter={props.onDeleteVoter} editVoter={props.onEditVoter} rowsToDelete={selectRows}/> : 
                         <VoterEditRow key={voter.id} voter={voter} cancel={props.onCancelEdit} save={props.onClickSave} />) }
                 </tbody>
             </table>
-            <input className="btn" type="button" value="Delete Selected Rows"  />  
+            <input className="btn" type="button" value="Delete Selected Rows" onClick={deleteMultipleVoters}  />  
         </div>
     );
 };

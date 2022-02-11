@@ -31,12 +31,10 @@ import {
       return res.json();
     };
 
-
-    const removeMultiple = async resourceIds => {
-      const res = await fetch(
-        elementUrl(resourceName, resourceIds),
+    const removePromise = resourceId => {
+      return fetch(
+        elementUrl(resourceName, resourceId),
         fetchOptions(HTTP_METHOD_DELETE));
-      return res.json();
     }
 
     const allElections = async () => {
@@ -51,6 +49,6 @@ import {
       }
     }
   
-    return {all, append, replace, remove, allElections, singleElection};
+    return {all, append, replace, remove, allElections, singleElection, removePromise};
   
   };

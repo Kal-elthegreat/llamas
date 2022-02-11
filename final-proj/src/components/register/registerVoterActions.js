@@ -22,7 +22,8 @@ const {
     all: allVoters,
     append: appendVoter,
     replace: replaceVoter,
-    remove: removeVoter
+    remove: removeVoter,
+    removePromise: removePromise
 } = createApi('voters');
 
 export const createRefreshVotersRequestAction = () => ({
@@ -101,8 +102,11 @@ export const createDeleteMultipleVotersDoneAction = voterIds => ({ type: DELETE_
 
 export const deleteMultipleVoters = voterIds => {
     return async dispatch => {
-        dispatch(createDeleteMultipleVotersRequestAction(voterIds));
-        await voterIds.forEach(voterId => deleteVoter(voterId));
+    let promiseArray = [];
+    for (let i=0;i<voterIds.length;i++){
+        promiseArray.push( removePromise(voterIds[i]))
+    }
+    Promise.all(promiseArray).then(results=>{
         dispatch(refreshVoters());
-    };
-}
+    })
+}}

@@ -12,7 +12,7 @@ export const VoterViewRow = props => {
             <td>
                 <button className="btn" type="button" onClick={() => props.editVoter(props.voter.id)}>Edit</button>
                 <button className="btn" type="button" onClick={() => props.deleteVoter(props.voter.id)}>Delete</button>
-                <input type="checkbox" name="DeleteRows" value={props.voter.id} onClick={() => props.selectRowsToDelete(props.voter.id)}></input>
+                <input type="checkbox" name="DeleteRows" value={props.voter.id} onClick={() => props.rowsToDelete(props.voter.id)}></input>
             </td>
         </tr>
     )
