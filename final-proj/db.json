@@ -17,7 +17,7 @@
       "city": "San Franciscos",
       "birthdate": "01/01/92",
       "email": "johnnybravo@gmail.com",
-      "phone": "5127895801",
+      "phone": "51278958012",
       "id": 2
     },
     {
@@ -117,7 +117,7 @@
           "voterIds": []
         }
       ],
-      "id": 3    
+      "id": 3
     }
   ],
   "votes": [

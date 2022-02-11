@@ -2,14 +2,14 @@ import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { createShouldDisplayResultsAction, addElection,refreshElections, createSelectIdAction} from "../components/election/actions/electionActions";
-import { addVoter, refreshVoters,saveVoter,deleteVoter,deleteMultipleVoters, createSortVotersAction, createEditVoterAction, createCancelEditVoterAction } from "../components/register/registerVoterActions";
+import { addVoter, refreshVoters,saveVoter,deleteVoter,deleteVoterIdsToDelete, createSortVotersAction, createEditVoterAction, createCancelEditVoterAction, createSelectVotersToDeleteAction } from "../components/register/registerVoterActions";
 import { selectVoterIds,selectEditVoterId, selectSortedVoters, selectSortObj } from "../components/register/registerVoterSelectors";
 
 
 export const useLlamasStore = ()=> {
     //voters
     const voters = useSelector(selectSortedVoters);
-    const voterIds = useSelector(selectVoterIds)
+    const voterIdsToDelete = useSelector(state=> state.voterIdsToDelete);
     const editVoterId = useSelector(selectEditVoterId);
     const sortObj = useSelector(selectSortObj);
 
@@ -27,10 +27,11 @@ export const useLlamasStore = ()=> {
         addVoter,
         saveVoter,
         deleteVoter,
-        deleteMultipleVoters,
+        deleteVoterIdsToDelete,
         sortVoters:createSortVotersAction,
         editVoter: createEditVoterAction,
         cancelEditVoter:createCancelEditVoterAction,
+        selectVotersToDelete: createSelectVotersToDeleteAction,
 
         //Elections
         shouldDisplayResults:createShouldDisplayResultsAction,
@@ -46,7 +47,7 @@ export const useLlamasStore = ()=> {
 
     return {...actions, 
         voters, editVoterId, sortObj,
-        election,shouldDisplay,elections};
+        election,shouldDisplay,elections,voterIdsToDelete};
 }
 
 //fn to return a single election

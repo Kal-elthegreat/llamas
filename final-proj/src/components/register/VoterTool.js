@@ -18,7 +18,9 @@ export const VoterTool = () =>{
                 sortObj={llamasStore.sortObj}
                 onSort={llamasStore.sortVoters}
                 onCancelEdit={llamasStore.cancelEditVoter}
-                onDeleteMultipleVoters={llamasStore.deleteMultipleVoters}
+                onDeleteMultipleVoters={llamasStore.deleteVoterIdsToDelete}
+                selectVotersToDelete = {llamasStore.selectVotersToDelete}
+                voterIdsToDelete={llamasStore.voterIdsToDelete}
             />
         </div>
 
