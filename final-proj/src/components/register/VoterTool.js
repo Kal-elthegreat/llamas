@@ -6,6 +6,7 @@ import './index.css'
 
 export const VoterTool = () =>{
     const llamasStore = useLlamasStore();
+
     return(
         <div className="voter-tool-container">
             <VoterForm buttonText="Register Voter" onSubmitVoterForm={llamasStore.addVoter}/>
@@ -17,7 +18,6 @@ export const VoterTool = () =>{
                 sortObj={llamasStore.sortObj}
                 onSort={llamasStore.sortVoters}
                 onCancelEdit={llamasStore.cancelEditVoter}
-                sortButtonText={llamasStore.votersSort.sortCol + "-" + llamasStore.votersSort.sortDir} 
             />
         </div>
 
