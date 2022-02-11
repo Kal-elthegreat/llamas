@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
-import { createShouldDisplayResultsAction, createAddElectionRequestAction,refreshElections, createSelectIdAction} from "../components/election/actions/electionActions";
+import { createShouldDisplayResultsAction, addElection,refreshElections, createSelectIdAction} from "../components/election/actions/electionActions";
 import { addVoter, refreshVoters,saveVoter,deleteVoter, createSortVotersAction, createEditVoterAction, createCancelEditVoterAction } from "../components/register/registerVoterActions";
 import { selectEditVoterId, selectSortedVoters, selectSortObj } from "../components/register/registerVoterSelectors";
 
@@ -32,7 +32,7 @@ export const useLlamasStore = ()=> {
 
         //Elections
         shouldDisplayResults:createShouldDisplayResultsAction,
-        addElection: createAddElectionRequestAction,
+        addElection,
         selectElectionId: createSelectIdAction,
         refreshElections,
     },dispatch),[dispatch]);

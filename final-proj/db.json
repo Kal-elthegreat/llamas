@@ -90,6 +90,33 @@
           ]
         }
       ]
+    },
+    {
+      "name": "mani",
+      "questionnaire": [
+        {
+          "id": 1,
+          "question": "a1a2",
+          "yesCount": 0,
+          "noCount": 0,
+          "voterIds": []
+        },
+        {
+          "id": 2,
+          "question": "a3",
+          "yesCount": 0,
+          "noCount": 0,
+          "voterIds": []
+        },
+        {
+          "id": 3,
+          "question": "aw",
+          "yesCount": 0,
+          "noCount": 0,
+          "voterIds": []
+        }
+      ],
+      "id": 3
     }
   ],
   "votes": [
