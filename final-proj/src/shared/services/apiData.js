@@ -41,14 +41,7 @@ import {
       const res = await fetch(collectionUrl(resourceName));
       return res.json();
     }
-
-    const singleElection = async (electionId) => {
-      if (electionId > 0) {
-        const res = await fetch(elementUrl(resourceName, electionId))
-        return res.json
-      }
-    }
   
-    return {all, append, replace, remove, allElections, singleElection, removePromise};
+    return {all, append, replace, remove, allElections, removePromise};
   
   };

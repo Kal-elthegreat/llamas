@@ -11,7 +11,7 @@ export const ElectionRow = (props) => {
     return (
         <tr>
             <td>{election.name}</td>
-            <td><button onClick={() => submitViewResults(election.id)}>View Results</button></td>{/* get obj by id, set should display to true */}
+            <td><button onClick={() => submitViewResults(election.id)}>View Results</button></td>
         </tr>
     )
 }
