@@ -9,7 +9,7 @@ export const CreateElection = () => {
 
     return (
         <div className='election-container'>
-            <ElectionForm onSubmitElection={store.addElection}/>
+            <ElectionForm onSubmitElection={store.addElection} electionForm={store.electionForm} updateElection={store.updateElection}/>
             <ElectionsTable
                 elections={store.elections} /*elections should be an array of objects*/
                 shouldDisplayResults={store.shouldDisplayResults}
