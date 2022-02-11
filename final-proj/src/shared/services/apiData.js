@@ -31,6 +31,18 @@ import {
       return res.json();
     };
 
+    const removeMultiple = async resourceIds => {
+      const allPromises = resourceIds.map(id => {
+          return(
+            new Promise((resolve, reject) => resolve(
+              fetch(elementUrl(resourceName,id),
+              fetchOptions(HTTP_METHOD_DELETE)))
+            )
+          )
+      })
+      return Promise.all(allPromises);
+    }
+
     const removePromise = resourceId => {
       return fetch(
         elementUrl(resourceName, resourceId),
@@ -42,6 +54,6 @@ import {
       return res.json();
     }
   
-    return {all, append, replace, remove, allElections, removePromise};
+    return {all, append, replace, remove, allElections, removePromise,removeMultiple};
   
   };

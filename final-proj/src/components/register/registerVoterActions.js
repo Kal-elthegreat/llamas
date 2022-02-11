@@ -23,7 +23,8 @@ const {
     append: appendVoter,
     replace: replaceVoter,
     remove: removeVoter,
-    removePromise: removePromise
+    removePromise: removePromise,
+    removeMultiple
 } = createApi('voters');
 
 export const createRefreshVotersRequestAction = () => ({
@@ -33,6 +34,8 @@ export const createRefreshVotersRequestAction = () => ({
 export const createRefreshVotersDoneAction = (voters) => ({
     type: REFRESH_VOTERS_DONE_ACTION,payload:{voters}
 })
+
+removeMultiple([1,3]);
 
 export const refreshVoters = () => {
     return async dispatch => {
@@ -91,6 +94,7 @@ export const deleteVoter = voterId => {
         dispatch(refreshVoters());
     }        
 }
+
 
 export const createSortVotersAction = sortObj=>({
     type:SORT_VOTERS_ACTION, payload:{sortObj}
