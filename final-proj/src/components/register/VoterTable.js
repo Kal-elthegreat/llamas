@@ -5,11 +5,9 @@ import { VoterEditRow } from './VoterEditRow';
 
 export const VoterTable = props => {
     const selectedVotersList = []
+
     const selectRows = voterId => {
-        if(selectedVotersList.includes(voterId)){
-                selectedVotersList.filter(selectedVoter => selectedVoter !== voterId)
-        }
-        
+        selectedVotersList.push(voterId)
     };
 
     const deleteMultipleVoters = () => {

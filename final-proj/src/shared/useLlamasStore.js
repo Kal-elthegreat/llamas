@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { createShouldDisplayResultsAction, addElection,refreshElections, createSelectIdAction} from "../components/election/actions/electionActions";
 import { addVoter, refreshVoters,saveVoter,deleteVoter,deleteMultipleVoters, createSortVotersAction, createEditVoterAction, createCancelEditVoterAction } from "../components/register/registerVoterActions";
-import { selectEditVoterId, selectSortedVoters, selectSortObj } from "../components/register/registerVoterSelectors";
+import { selectVoterIds,selectEditVoterId, selectSortedVoters, selectSortObj } from "../components/register/registerVoterSelectors";
 
 
 export const useLlamasStore = ()=> {
     //voters
     const voters = useSelector(selectSortedVoters);
+    const voterIds = useSelector(selectVoterIds)
     const editVoterId = useSelector(selectEditVoterId);
     const sortObj = useSelector(selectSortObj);
 
