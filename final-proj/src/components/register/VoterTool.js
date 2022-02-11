@@ -9,7 +9,7 @@ export const VoterTool = () =>{
     return(
         <div className="voter-tool-container">
             <VoterForm buttonText="Register Voter" onSubmitVoterForm={llamasStore.addVoter}/>
-            {/* <VoterTable voters={llamasStore.voters} 
+            <VoterTable voters={llamasStore.voters} 
                 editVoterID={llamasStore.editVoterId}
                 onEditVoter={llamasStore.editVoter}
                 onDeleteVoter={llamasStore.deleteVoter} 
@@ -17,8 +17,8 @@ export const VoterTool = () =>{
                 sortObj={llamasStore.sortObj}
                 onSort={llamasStore.sortVoters}
                 onCancelEdit={llamasStore.cancelEditVoter}
-                // sortButtonText={llamasStore.votersSort.sortCol + "-" + voterToolStore.votersSort.sortDir} 
-            /> */}
+                sortButtonText={llamasStore.votersSort.sortCol + "-" + llamasStore.votersSort.sortDir} 
+            />
         </div>
 
     )
