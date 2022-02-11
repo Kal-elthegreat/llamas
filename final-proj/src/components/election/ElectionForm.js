@@ -4,7 +4,7 @@ import { useState } from 'react';
 const initialForm =  {
     id:-1,
     name:"",
-    questions:[
+    questionnaire:[
         {
             id:1,
             question:"",
@@ -42,7 +42,7 @@ export const ElectionForm = (props) => {
         if(e.target.name === 'question1'){
             setElectionForm({
                 name:electionForm.name,
-                questions : 
+                questionnaire : 
                 [
                     {
                         id:1,
@@ -51,17 +51,17 @@ export const ElectionForm = (props) => {
                         noCount:0,
                         voterIds:[]
                     },
-                    {...electionForm.questions[1]},
-                    {...electionForm.questions[2]}
+                    {...electionForm.questionnaire[1]},
+                    {...electionForm.questionnaire[2]}
                 ]
             })
         }
         if(e.target.name === 'question2'){
             setElectionForm({
                 name:electionForm.name,
-                questions : 
+                questionnaire : 
                 [
-                    {...electionForm.questions[0]},
+                    {...electionForm.questionnaire[0]},
                     {
                         id:2,
                         question:e.target.value,
@@ -69,17 +69,17 @@ export const ElectionForm = (props) => {
                         noCount:0,
                         voterIds:[]
                     },                    
-                    {...electionForm.questions[2]}
+                    {...electionForm.questionnaire[2]}
                 ]
             })
         }
         if(e.target.name === 'question3'){
             setElectionForm({
                 name:electionForm.name,
-                questions : 
+                questionnaire : 
                 [
-                    {...electionForm.questions[0]},
-                    {...electionForm.questions[1]},
+                    {...electionForm.questionnaire[0]},
+                    {...electionForm.questionnaire[1]},
                     {
                         id:3,
                         question:e.target.value,
@@ -108,9 +108,9 @@ export const ElectionForm = (props) => {
                 <input  type="text" name ="name" className="formControl" value={electionForm.name} onChange={change}/>
             </label> 
            {
-               electionForm.questions.map(q=> 
+               electionForm.questionnaire.map(q=> 
                 <label className="formRow" key={q.id}>Question {q.id}:
-                    <input  type="text" name ={"question" + q.id} className="formControl" value={electionForm.questions[q.id-1].question} onChange={change}/>
+                    <input  type="text" name ={"question" + q.id} className="formControl" value={electionForm.questionnaire[q.id-1].question} onChange={change}/>
                 </label>
                 )
            } 
