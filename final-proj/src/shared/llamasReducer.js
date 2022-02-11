@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { SELECT_ID_ACTION,SHOULD_DISPLAY_RESULTS_ACTION, REFRESH_ELECTIONS_DONE_ACTION } from "../components/election/actions/electionActions";
-import { CANCEL_EDIT_VOTER_ACTION, EDIT_VOTER_REQUEST_ACTION, REFRESH_VOTERS_DONE_ACTION, SORT_VOTERS_ACTION } from "../components/register/registerVoterActions";
+import { CANCEL_EDIT_VOTER_ACTION, EDIT_VOTER_REQUEST_ACTION, REFRESH_VOTERS_DONE_ACTION, SELECT_VOTERS_TO_DELETE_ACTION, SORT_VOTERS_ACTION } from "../components/register/registerVoterActions";
 
 const votersReducer = (voters=[],action)=>{
     if(action.type === REFRESH_VOTERS_DONE_ACTION)
@@ -26,6 +26,26 @@ const sortObjReducer = (sortObj={order:true,column:'Id'},action)=>{
     return sortObj;
 }
 
+
+const voterIdsToDeleteReducer = (voterIdsToDelete=[],action)=>{
+    //console.log(voterIdsToDelete,action.payload.voterId,action);
+    if(action.type===SELECT_VOTERS_TO_DELETE_ACTION){
+        
+        if(voterIdsToDelete.includes(action.payload.voterId)){
+            return voterIdsToDelete.filter(v=> v !== action.payload.voterId);
+        }
+        else{
+            return [
+                ...voterIdsToDelete,
+                action.payload.voterId
+            ];
+        }
+    }
+    if(action.type === REFRESH_VOTERS_DONE_ACTION){
+        return [];
+    }
+    return voterIdsToDelete;
+}
 
 // Elections Reducers //////////////////
 
@@ -54,6 +74,8 @@ export const llamasReducer = combineReducers({
     voters: votersReducer,
     editVoterId: editVoterIdReducer,
     sortObj: sortObjReducer,
+    voterIdsToDelete: voterIdsToDeleteReducer,
+    //elections
     elections:electionsReducer,
     electionId: electionIdReducer,
     shouldDisplay: displayResultsReducer

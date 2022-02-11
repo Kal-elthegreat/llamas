@@ -16,7 +16,7 @@ export const SORT_VOTERS_ACTION = "SORT_VOTERS";
 export const DELETE_MULTIPLE_VOTERS_REQUEST_ACTION = 'DELETE_MULTIPLE_VOTERS_REQUEST';
 export const DELETE_MULTIPLE_VOTERS_DONE_ACTION = 'DELETE_MULTIPLE_VOTERS_DONE';
 export const DELETE_MULTIPLE_VOTERS_ACTION = 'DELETE_MULTIPLE_VOTERS';
-
+export const SELECT_VOTERS_TO_DELETE_ACTION = 'SELECT_VOTERS_TO_DELETE_ACTION';
 
 const {
     all: allVoters,
@@ -35,7 +35,7 @@ export const createRefreshVotersDoneAction = (voters) => ({
     type: REFRESH_VOTERS_DONE_ACTION,payload:{voters}
 })
 
-removeMultiple([1,3]);
+//removeMultiple([1,3]);
 
 export const refreshVoters = () => {
     return async dispatch => {
@@ -104,13 +104,26 @@ export const createDeleteMultipleVotersRequestAction = voterIds => ({ type: DELE
 
 export const createDeleteMultipleVotersDoneAction = voterIds => ({ type: DELETE_MULTIPLE_VOTERS_DONE_ACTION, payload: {voterIds} });
 
-export const deleteMultipleVoters = voterIds => {
-    return async dispatch => {
+export const deleteVoterIdsToDelete = voterIdsToDelete => {
+   /* return async dispatch => {
     let promiseArray = [];
     for (let i=0;i<voterIds.length;i++){
         promiseArray.push( removePromise(voterIds[i]))
     }
     Promise.all(promiseArray).then(results=>{
         dispatch(refreshVoters());
-    })
-}}
+    })*/
+
+    return async dispatch => {
+       // console.log('deleteing ', voterIdsToDelete);
+        Promise.all(voterIdsToDelete.map(voterId => removeVoter(voterId)))
+        .then(() => dispatch(refreshVoters()))        
+    }
+    //removeMultiple(voterIds);
+    //dispatch(refreshVoters());
+}
+
+
+export const createSelectVotersToDeleteAction = voterId => ({
+    type:SELECT_VOTERS_TO_DELETE_ACTION,payload:{voterId}
+})
