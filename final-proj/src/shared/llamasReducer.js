@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { SELECT_ID_ACTION,SHOULD_DISPLAY_RESULTS_ACTION, REFRESH_ELECTIONS_DONE_ACTION } from "../components/election/actions/electionActions";
+import { SELECT_ID_ACTION,SHOULD_DISPLAY_RESULTS_ACTION, REFRESH_ELECTIONS_DONE_ACTION,UPDATE_ELECTION_ACTION } from "../components/election/actions/electionActions";
 import { CANCEL_EDIT_VOTER_ACTION, EDIT_VOTER_REQUEST_ACTION, REFRESH_VOTERS_DONE_ACTION, SELECT_VOTERS_TO_DELETE_ACTION, SORT_VOTERS_ACTION } from "../components/register/registerVoterActions";
 
 const votersReducer = (voters=[],action)=>{
@@ -70,6 +70,14 @@ const displayResultsReducer = (shouldDisplay = false, action) => {
     return shouldDisplay; 
 }
 
+const electionFormReducer = (initialForm = { id: 1, name: "", questionnaire: [{ id: 1, question: "", yesCount: 0, noCount: 0, voterIds: [] }] }, action) => {
+    if (action.type === UPDATE_ELECTION_ACTION) {
+        return {...action.election }
+    }
+    return initialForm
+
+}
+
 export const llamasReducer = combineReducers({
     voters: votersReducer,
     editVoterId: editVoterIdReducer,
@@ -78,5 +86,6 @@ export const llamasReducer = combineReducers({
     //elections
     elections:electionsReducer,
     electionId: electionIdReducer,
-    shouldDisplay: displayResultsReducer
+    shouldDisplay: displayResultsReducer,
+    electionForm:electionFormReducer
 })

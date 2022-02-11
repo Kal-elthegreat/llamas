@@ -2,6 +2,7 @@ import { createApi } from "../../../shared/services/apiData"
 
 export const SELECT_ID_ACTION = "[Election] SELECT_ID";
 export const SHOULD_DISPLAY_RESULTS_ACTION = "[Election] SHOULD_DISPLAY_RESULTS";
+export const UPDATE_ELECTION_ACTION = "[Election] UPDATE_ELECTION";
 
 export const createSelectIdAction = (id) => ({ type: SELECT_ID_ACTION, id });
 export const createShouldDisplayResultsAction = (bool) => ({ type: SHOULD_DISPLAY_RESULTS_ACTION, bool})
@@ -54,3 +55,5 @@ export const addElection = election => {
         dispatch(refreshElections());
     }
 }
+
+export const updateElectionAction = election => ({type: UPDATE_ELECTION_ACTION, election})
