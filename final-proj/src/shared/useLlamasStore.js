@@ -1,8 +1,8 @@
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
-import { createShouldDisplayResultsAction, createAddElectionRequestAction,refreshElections} from "../components/election/actions/electionActions";
-import { addVoter, refreshVoters,saveVoter,deleteVoter, deleteMultipleVoters, createSortVotersAction, createEditVoterAction, createCancelEditVoterAction } from "../components/register/registerVoterActions";
+import { createShouldDisplayResultsAction, addElection,refreshElections, createSelectIdAction} from "../components/election/actions/electionActions";
+import { addVoter, refreshVoters,saveVoter,deleteVoter,deleteMultipleVoters, createSortVotersAction, createEditVoterAction, createCancelEditVoterAction } from "../components/register/registerVoterActions";
 import { selectEditVoterId, selectSortedVoters, selectSortObj } from "../components/register/registerVoterSelectors";
 
 
