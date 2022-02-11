@@ -31,6 +31,14 @@ import {
       return res.json();
     };
 
+
+    const removeMultiple = async resourceIds => {
+      const res = await fetch(
+        elementUrl(resourceName, resourceIds),
+        fetchOptions(HTTP_METHOD_DELETE));
+      return res.json();
+    }
+
     const allElections = async () => {
       const res = await fetch(collectionUrl(resourceName));
       return res.json();

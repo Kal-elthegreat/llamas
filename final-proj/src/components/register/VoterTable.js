@@ -43,7 +43,7 @@ const sortBy = (e)=>{
             </thead>
             <tbody>
                 { props.voters.map(voter => voter.id !== props.editVoterID ?
-                     <VoterViewRow key={voter.id} voter={voter} deleteVoter={props.onDeleteVoter} editVoter={props.onEditVoter}/> : 
+                     <VoterViewRow key={voter.id} voter={voter} deleteVoter={props.onDeleteVoter} editVoter={props.onEditVoter} selectRowsToDelete={selectRows}/> : 
                      <VoterEditRow key={voter.id} voter={voter} cancel={props.onCancelEdit} save={props.onClickSave} />) }
             </tbody>
         </table>

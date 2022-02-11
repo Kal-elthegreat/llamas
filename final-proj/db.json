@@ -1,14 +1,13 @@
 {
   "voters": [
     {
-      "id": 1,
       "firstName": "John",
       "lastName": "Doe",
       "address": "3445 North Boulevard",
       "city": "San Francisco",
-      "birthDate": "02/02/1990",
       "email": "johndoe@gmail.com",
-      "phone": "5127895301"
+      "phone": "5127895301",
+      "id": 1
     },
     {
       "firstName": "Johnny",
@@ -20,14 +19,13 @@
       "id": 2
     },
     {
-      "id": 3,
       "firstName": "Mary",
       "lastName": "Jane",
       "address": "3435 east Boulevard",
       "city": "San Francisco",
-      "birthDate": "03/04/1991",
       "email": "maryjane@gmail.com",
-      "phone": "5127095801"
+      "phone": "5127095801",
+      "id": 3
     }
   ],
   "elections": [
