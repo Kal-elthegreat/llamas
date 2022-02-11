@@ -5,6 +5,7 @@
       "lastName": "Doe",
       "address": "3445 North Boulevard",
       "city": "San Francisco",
+      "birthdate": "01/01/91",
       "email": "johndoe@gmail.com",
       "phone": "5127895301",
       "id": 1
@@ -14,6 +15,7 @@
       "lastName": "Bravo",
       "address": "3445 South Boulevard",
       "city": "San Franciscos",
+      "birthdate": "01/01/92",
       "email": "johnnybravo@gmail.com",
       "phone": "5127895801",
       "id": 2
@@ -23,6 +25,7 @@
       "lastName": "Jane",
       "address": "3435 east Boulevard",
       "city": "San Francisco",
+      "birthdate": "01/01/93",
       "email": "maryjane@gmail.com",
       "phone": "5127095801",
       "id": 3
@@ -114,7 +117,7 @@
           "voterIds": []
         }
       ],
-      "id": 3
+      "id": 3    
     }
   ],
   "votes": [
